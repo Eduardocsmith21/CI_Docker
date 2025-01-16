@@ -21,10 +21,10 @@ jobs:
         go_version: ['1.18', '1.17', '>=1.18']
         os: ['ubuntu-22.04']
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
     - name: Set up Go
-      uses: actions/setup-go@v4
+      uses: actions/setup-go@v3
       with:
         go-version: ${{ matrix.go_version }}
       
@@ -47,12 +47,12 @@ jobs:
     needs: test
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
     - name: Build
       run: go build -v main.go
       
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3.1.0
       with:
     # Artifact name
         name: programa
@@ -63,4 +63,4 @@ jobs:
   docker:
     needs: build
     uses: ./.github/workflows/Docker.yml
-    secrets: inherit #Execulta todos os segredos que estão em secrets
+    secrets: inherit #Execulta todos os segredos que estão em
