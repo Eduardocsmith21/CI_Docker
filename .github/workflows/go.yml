@@ -63,4 +63,4 @@ jobs:
   docker:
     needs: build
     uses: ./.github/workflows/Docker.yml
-    secrets: inherit #Execulta todos os segredos que estão em
+    secrets: inherit #Execulta todos os segredos que estão em secrets
